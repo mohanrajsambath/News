@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_welcome"
+    app:startDestination="@id/news">
+
+    <fragment
+        android:id="@+id/news"
+        android:name="com.nousdigital.assessmentTest.views.news.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/fragment_news">
+
+        <action
+            android:id="@+id/action_news"
+            app:destination="@+id/news_detail" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/news_detail"
+        android:name="com.nousdigital.assessmentTest.views.news_details.NewsDetailsFragment"
+        android:label="NewsDetail"
+        tools:layout="@layout/fragment_news_details">
+
+        <argument
+            android:name="item"
+            app:argType="com.nousdigital.assessmentTest.data.model.Item" />
+
+
+    </fragment>
+
+</navigation>

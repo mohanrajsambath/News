@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="str_tittle">Tittle</string>
+    <string name="str_desc">Description</string>
+    <string name="str_news_details">Details View</string>
+    <string name="str_image">Image</string>
+
+    <string name="str_send_email">Send Email</string>
+
 </resources>
