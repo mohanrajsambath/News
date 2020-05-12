@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+
+        <variable
+            name="item"
+            type="com.nousdigital.assessmentTest.data.model.Item" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/ic_arrow_back_white"
+            app:title="@string/str_news_details"
+            app:titleTextColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/ImgView_Poster"
+            style="@style/Poster"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:contentDescription="@string/str_desc"
+            android:fitsSystemWindows="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/preview"
+            app:layout_anchorGravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            image="@{item.imageUrl}"/>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintTop_toBottomOf="@+id/ImgView_Poster">
+
+            <LinearLayout
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ImgView_Poster">
+
+                <TextView
+                    style="@style/NewsDetailsTitle"
+                    android:text="@string/str_tittle" />
+
+                <TextView
+                    android:id="@+id/tittle"
+                    style="@style/NameText"
+                    android:text="@{item.title}"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/NewsDetailsTitle"
+                    android:text="@string/str_desc" />
+
+                <TextView
+                    android:id="@+id/desc"
+                    android:text="@{item.description}"
+                    style="@style/NameText" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_sendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:onClick="@{clickListener}"
+            android:text="@string/str_send_email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+           />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

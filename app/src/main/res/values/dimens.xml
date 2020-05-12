@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="news_details_title">18dp</dimen>
+    <dimen name="news_details_text">14dp</dimen>
+
+
+    <!-- Card view. -->
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+
+</resources>
