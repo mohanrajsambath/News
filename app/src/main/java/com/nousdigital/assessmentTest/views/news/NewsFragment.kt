@@ -31,10 +31,8 @@ class NewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        if (this::binding.isInitialized.not()) {
-            binding = FragmentNewsBinding.inflate(inflater, container, false)
-            setUpViewModelObserver()
-        }
+        binding = FragmentNewsBinding.inflate(inflater, container, false)
+        setUpViewModelObserver()
         return binding.root
     }
 
