@@ -39,7 +39,6 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
      * updating data to adapter
      */
     fun update(data: List<Item>) {
-        items.clear()
         items.addAll(data)
         notifyDataSetChanged()
     }
@@ -56,7 +55,5 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
                 it?.findNavController()?.navigate(destination)
             }
         }
-
-
     }
 }
